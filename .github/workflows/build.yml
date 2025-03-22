@@ -39,3 +39,4 @@ jobs:
         run: |
           VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           mvn spring-boot:build-image
+          docker push ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:$VERSION
