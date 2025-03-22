@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# SpringBoot 3
+
+- This is a SpringBoot 3 project. Follow best practices for SpringBoot 3. Do not change the SpringBoot version.
+- This project is Java 21. Please use the features available in Java 21. Do not change the Java version.
+- use record in preference to class for immutable objects when generating code
+- use lombok to reduce the amount of code
+- changes to existing should be 
+- do not duplicate code! When adding new code, review the codebase for similar code and modify this.
+- this is a WebFlux project. Follow reactive programming paradigms. 
+- carefully consider the classes available in existing dependencies in [pom.xml](mdc:pom.xml) before adding new ones.
