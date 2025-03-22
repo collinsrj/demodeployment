@@ -97,12 +97,17 @@
 						</exclude>
 					</excludes>
 					<image>
-						<name>${project.artifactId}:${project.version}</name>
+						<name>ghcr.io/collinsrj/${project.artifactId}:${project.version}</name>
 						<publish>false</publish>
 						<env>
 							<BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
 						</env>
 					</image>
+					<docker>
+						<builderRegistry>
+							<token>${env.GITHUB_TOKEN}</token>
+						</builderRegistry>
+					</docker>
 				</configuration>
 			</plugin>
 			<plugin>
