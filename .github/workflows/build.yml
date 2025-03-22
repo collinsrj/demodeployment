@@ -39,13 +39,3 @@ jobs:
         run: |
           VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           mvn spring-boot:build-image
-
-      - name: Tag latest image
-        if: github.ref == 'refs/heads/main'
-        run: |
-          VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          # First pull the image we just pushed
-          docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:$VERSION
-          # Then tag and push as latest
-          docker tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:$VERSION ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-          docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
