@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Not Docker
+
+- This is not a Docker project. I'm using SpringBoot build-image to create an OCI image. 
+- Do not create a Docker file for this project.
